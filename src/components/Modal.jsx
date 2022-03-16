@@ -26,10 +26,18 @@ export const Modal = ({ setModal, animarModal, setAnimarModal }) => {
                 <div className='campo'>
                     <label htmlFor="nombre">Nombre Gasto</label>
                     <input
+                        id="nombre"
                         type="text"
                         placeholder='Añade el nombre del gasto'
-                        name=""
-                        id=""
+                    />
+                </div>
+
+                <div className='campo'>
+                    <label htmlFor="cantidad">Cantidad</label>
+                    <input
+                        id="cantidad"
+                        type="number"
+                        placeholder='Añade la cantidad del gasto: ej. 300'
                     />
                 </div>
             </form>
