@@ -2,8 +2,8 @@ import React from 'react'
 
 export const ListadoGastos = () => {
     return (
-        <div>
-            <p>Listado Gasto</p>
+        <div className='listado-gastos contenedor'>
+            <h2>Gastos</h2>
         </div>
     )
 }
