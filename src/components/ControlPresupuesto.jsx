@@ -3,7 +3,10 @@ import { useEffect } from 'react'
 
 export const ControlPresupuesto = ({ gastos, presupuesto }) => {
 
-    useEffect
+    useEffect(() => {
+        first
+    }, [third])
+
 
     const formatearCantidad = (cantidad) => {
         return cantidad.toLocaleString('en-US', {
