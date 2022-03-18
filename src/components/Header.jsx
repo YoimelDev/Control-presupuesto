@@ -2,7 +2,13 @@ import React from 'react'
 import { ControlPresupuesto } from './ControlPresupuesto'
 import { NewBudget } from './NewBudget'
 
-export const Header = ({ presupuesto, setPresupuesto, isValidPresupuesto, setIsValidPresupuesto }) => {
+export const Header = ({
+    presupuesto,
+    setPresupuesto,
+    isValidPresupuesto,
+    setIsValidPresupuesto,
+    gastos
+}) => {
     return (
         <header>
             <h1>Planificador de Gastos</h1>
@@ -10,6 +16,7 @@ export const Header = ({ presupuesto, setPresupuesto, isValidPresupuesto, setIsV
             {isValidPresupuesto
                 ?
                 (<ControlPresupuesto
+                    gastos={gastos}
                     presupuesto={presupuesto}
                 />)
                 :

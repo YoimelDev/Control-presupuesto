@@ -1,6 +1,9 @@
 import React from 'react'
+import { useEffect } from 'react'
 
-export const ControlPresupuesto = ({ presupuesto }) => {
+export const ControlPresupuesto = ({ gastos, presupuesto }) => {
+
+    useEffect
 
     const formatearCantidad = (cantidad) => {
         return cantidad.toLocaleString('en-US', {
