@@ -1,10 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import CerrarBtn from '../img/cerrar.svg'
 import { Mensaje } from './Mensaje'
 
-export const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
-
-    const [mensaje, setMensaje] = useState('')
+export const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto, gastoEditar }) => {
 
     const ocultarModal = () => {
         setAnimarModal(false)
@@ -14,9 +12,19 @@ export const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) =
         }, 500);
     }
 
+    const [mensaje, setMensaje] = useState('')
     const [nombre, setNombre] = useState('')
     const [cantidad, setCantidad] = useState('')
     const [categoria, setCategoria] = useState('')
+
+    useEffect(() => {
+        if (Object.keys(gastoEditar).length > 0) {
+            setNombre(gastoEditar.nombre)
+            setCantidad(gastoEditar.cantidad)
+            setCategoria(gastoEditar.categoria)
+        }
+    }, [])
+
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -75,7 +83,7 @@ export const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) =
                 </div>
 
                 <div className='campo'>
-                    <label htmlFor="categoria">Categproa</label>
+                    <label htmlFor="categoria">Categoria</label>
 
                     <select
                         id="categoria"
