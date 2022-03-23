@@ -7,7 +7,9 @@ import { generarId } from './helpers'
 import IconoNuevoGasto from './img/nuevo-gasto.svg'
 
 function App() {
-	const [gastos, setGastos] = useState([])
+	const [gastos, setGastos] = useState(
+		localStorage.getItem('gastos') ? JSON.parse(localStorage.getItem('gastos')) : []
+	)
 
 	const [presupuesto, setPresupuesto] = useState(
 		Number(localStorage.getItem('presupuesto') ?? 0)
@@ -40,6 +42,11 @@ function App() {
 			setIsValidPresupuesto(true)
 		}
 	}, [])
+
+	useEffect(() => {
+		localStorage.setItem('gastos', JSON.stringify(gastos) ?? [])
+	}, [gastos])
+
 
 	const handleNuevoGasto = () => {
 		setModal(true)
