@@ -44,6 +44,7 @@ function App() {
 				gastoState.id === gasto.id ? gasto : gastoState
 			))
 			setGastos(gastoActualizados)
+			setGastoEditar({})
 		} else {
 			// Nuevo Gasto
 			gasto.id = generarId()
@@ -100,6 +101,7 @@ function App() {
 					setAnimarModal={setAnimarModal}
 					guardarGasto={guardarGasto}
 					gastoEditar={gastoEditar}
+					setGastoEditar={setGastoEditar}
 				/>
 			}
 		</div>
